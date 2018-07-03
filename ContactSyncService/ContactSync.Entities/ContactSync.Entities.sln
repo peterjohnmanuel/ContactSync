@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.IBusinessLogic", "ContactSync.IBusinessLogic\ContactSync.IBusinessLogic.csproj", "{4BF544EE-A3BA-47BE-A90D-9D604EF79E5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.BusinessLogic", "ContactSync.BusinessLogic\ContactSync.BusinessLogic.csproj", "{60B1163A-47E8-42DC-8F73-71C2EC7C4373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{4BF544EE-A3BA-47BE-A90D-9D604EF79E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF544EE-A3BA-47BE-A90D-9D604EF79E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF544EE-A3BA-47BE-A90D-9D604EF79E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B1163A-47E8-42DC-8F73-71C2EC7C4373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B1163A-47E8-42DC-8F73-71C2EC7C4373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B1163A-47E8-42DC-8F73-71C2EC7C4373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B1163A-47E8-42DC-8F73-71C2EC7C4373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{01E5D457-079F-4291-B825-D214B1FBB63D} = {88B55835-707E-49C8-889C-86FB8CDFF913}
 		{DF8224C6-612D-4831-A14B-BF9AA5ABF1AA} = {88B55835-707E-49C8-889C-86FB8CDFF913}
 		{4BF544EE-A3BA-47BE-A90D-9D604EF79E5E} = {09EDF25D-D496-4954-A109-23397E67653C}
+		{60B1163A-47E8-42DC-8F73-71C2EC7C4373} = {09EDF25D-D496-4954-A109-23397E67653C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8741E4C9-4B96-4844-B402-462749C82BF6}
