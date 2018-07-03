@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.Entities", "Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{E07A0CE0-5444-4DAD-9629-1D3182DE86EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{5BD5495D-BE46-4F79-B040-CB6902658050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.Context", "ContactSync.Context\ContactSync.Context.csproj", "{74F90AC7-BF21-40A4-A94B-81F854F76EF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{68696070-2F7B-4EC2-9497-82B2D4D1F89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68696070-2F7B-4EC2-9497-82B2D4D1F89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68696070-2F7B-4EC2-9497-82B2D4D1F89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F90AC7-BF21-40A4-A94B-81F854F76EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F90AC7-BF21-40A4-A94B-81F854F76EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F90AC7-BF21-40A4-A94B-81F854F76EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F90AC7-BF21-40A4-A94B-81F854F76EF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{68696070-2F7B-4EC2-9497-82B2D4D1F89C} = {E07A0CE0-5444-4DAD-9629-1D3182DE86EC}
+		{74F90AC7-BF21-40A4-A94B-81F854F76EF1} = {5BD5495D-BE46-4F79-B040-CB6902658050}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8741E4C9-4B96-4844-B402-462749C82BF6}
