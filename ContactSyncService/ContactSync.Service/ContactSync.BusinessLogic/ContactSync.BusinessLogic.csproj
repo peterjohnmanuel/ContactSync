@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContactSync.Entities\ContactSync.Entities.csproj" />
+    <ProjectReference Include="..\ContactSync.IBusinessLogic\ContactSync.IBusinessLogic.csproj" />
+    <ProjectReference Include="..\ContactSync.IRepository\ContactSync.IRepository.csproj" />
+  </ItemGroup>
+
+</Project>
