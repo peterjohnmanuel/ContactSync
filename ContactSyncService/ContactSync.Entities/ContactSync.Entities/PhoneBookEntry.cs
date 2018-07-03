@@ -1,6 +1,6 @@
 ﻿namespace ContactSync.Entities
 {
-    public class Entry
+    public class PhoneBookEntry
     {
         public long Id { get; set; }
         public string Name { get; set; }
