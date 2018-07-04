@@ -61,29 +61,29 @@ namespace ContactSync.Common.ValidationMessages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entry name is required and must have between 3 and 30 characters.
+        ///   Looks up a localized string similar to Contact group not found..
         /// </summary>
-        public static string EntryNameNotValid {
+        public static string ContactGroupNotFound {
             get {
-                return ResourceManager.GetString("EntryNameNotValid", resourceCulture);
+                return ResourceManager.GetString("ContactGroupNotFound", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone book entry not found..
+        ///   Looks up a localized string similar to Contact name is required and must have between 3 and 30 characters.
         /// </summary>
-        public static string PhoneBookEntryNotFound {
+        public static string ContactNameNotValid {
             get {
-                return ResourceManager.GetString("PhoneBookEntryNotFound", resourceCulture);
+                return ResourceManager.GetString("ContactNameNotValid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone book not found..
+        ///   Looks up a localized string similar to Contact not found..
         /// </summary>
-        public static string PhoneBookNotFound {
+        public static string ContactNotFound {
             get {
-                return ResourceManager.GetString("PhoneBookNotFound", resourceCulture);
+                return ResourceManager.GetString("ContactNotFound", resourceCulture);
             }
         }
         

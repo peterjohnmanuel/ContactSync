@@ -18,53 +18,53 @@ namespace ContactSync.BusinessLogic
             this.contactGroupRepository = contactGroupRepository;
         }
 
-        public Contact AddContactToContactGroup(long phoneBookId, Contact phoneBookEntry)
+        public Contact AddContactToContactGroup(long contactGroupId, Contact phoneBookEntry)
         {
-            var phoneBook = contactGroupRepository.GetContactGroupById(phoneBookId);
+            var contactGroup = contactGroupRepository.GetContactGroupById(contactGroupId);
 
-            if (phoneBook == null)
-                throw new BusinessRuleException(ValidationMessages.PhoneBookNotFound);
+            if (contactGroup == null)
+                throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
 
-            if (phoneBook.ContactGroups == null)
-                phoneBook.ContactGroups = new List<Contact>();
+            if (contactGroup.Contacts == null)
+                contactGroup.Contacts = new List<Contact>();
 
-            phoneBook.ContactGroups.Add(phoneBookEntry);
+            contactGroup.Contacts.Add(phoneBookEntry);
 
-            contactGroupRepository.UpdateContactGroup(phoneBook);
+            contactGroupRepository.UpdateContactGroup(contactGroup);
 
             return phoneBookEntry;
         }
 
-        public Contact GetContactById(long phoneBookId, long phoneBookEntryId)
+        public Contact GetContactById(long contactGroupId, long contactId)
         {
-            var phoneBook = contactGroupRepository.GetContactGroupById(phoneBookId, "PhoneBookEntries");
+            var contactGroup = contactGroupRepository.GetContactGroupById(contactGroupId, "Contacts");
 
-            if (phoneBook == null)
-                throw new BusinessRuleException(ValidationMessages.PhoneBookNotFound);
+            if (contactGroup == null)
+                throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
 
-            var phoneBookEntry = phoneBook.ContactGroups.FirstOrDefault(x => x.Id == phoneBookEntryId);
+            var contact = contactGroup.Contacts.FirstOrDefault(x => x.Id == contactId);
 
-            if (phoneBookEntry == null)
-                throw new BusinessRuleException(ValidationMessages.PhoneBookEntryNotFound);
+            if (contact == null)
+                throw new BusinessRuleException(ValidationMessages.ContactNotFound);
 
-            return phoneBookEntry;
+            return contact;
         }
 
-        public IEnumerable<Contact> SearchContacts(long phoneBookId, string search = "")
+        public IEnumerable<Contact> SearchContacts(long contactGroupId, string search = "")
         {
-            var phoneBook = contactGroupRepository.GetContactGroupById(phoneBookId, "PhoneBookEntries");
+            var contactGroups = contactGroupRepository.GetContactGroupById(contactGroupId, "Contacts");
 
-            if (phoneBook == null)
-                throw new BusinessRuleException(ValidationMessages.PhoneBookNotFound);
+            if (contactGroups == null)
+                throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
 
-            var phoneBookEntries = phoneBook.ContactGroups
+            var contacts = contactGroups.Contacts
                 .Where(x => 
                 
                     x.Name.ToLower().Contains(search.ToLower())
                     || x.PhoneNumber.ToLower().Contains(search.ToLower())
                 );
 
-            return phoneBookEntries;
+            return contacts;
         }
     }
 }

@@ -75,7 +75,7 @@ namespace ContactSync.Api.Controllers
 
                     contactBusinessLogic.AddContactToContactGroup(contactGroupId, contact);
 
-                    return Created($"/api/PhoneBook/{contact.ContactGroup.Id}/PhoneBookEntry/{contact.Id}", Mapper.Map<Contact, ContactDto>(contact));
+                    return Created($"/api/ContactGroup/{contact.ContactGroup.Id}/Contact/{contact.Id}", Mapper.Map<Contact, ContactDto>(contact));
                 }
 
                 return BadRequest(ModelState);

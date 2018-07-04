@@ -26,7 +26,7 @@ namespace ContactSync.Data
                     new ContactGroup
                     {
                         Name = "Family",
-                        ContactGroups = new List<Contact>
+                        Contacts = new List<Contact>
                         {
                             new Contact
                             {
@@ -38,7 +38,7 @@ namespace ContactSync.Data
                     new ContactGroup
                     {
                         Name = "Friends",
-                        ContactGroups = new List<Contact>()
+                        Contacts = new List<Contact>()
                         {
                             new Contact
                             {
@@ -50,7 +50,7 @@ namespace ContactSync.Data
                     new ContactGroup
                     {
                         Name = "Work Colleagues",
-                        ContactGroups = new List<Contact>()
+                        Contacts = new List<Contact>()
                         {
                             new Contact
                             {
@@ -62,7 +62,7 @@ namespace ContactSync.Data
                     new ContactGroup
                     {
                         Name = "Business Contacts",
-                        ContactGroups = new List<Contact>()
+                        Contacts = new List<Contact>()
                         {
                             new Contact
                             {
@@ -74,7 +74,7 @@ namespace ContactSync.Data
                     new ContactGroup
                     {
                         Name = "Emergancy Contacts",
-                        ContactGroups = new List<Contact>()
+                        Contacts = new List<Contact>()
                         {
                             new Contact
                             {

@@ -6,11 +6,11 @@ namespace ContactSync.Entities
     {
         public ContactGroup()
         {
-            ContactGroups = new List<Contact>();
+            Contacts = new List<Contact>();
         }
 
         public long Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Contact> ContactGroups { get; set; }
+        public ICollection<Contact> Contacts { get; set; }
     }
 }
