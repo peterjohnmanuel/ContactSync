@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace ContactSync.IBusinessLogic
 {
-    public interface IPhoneBookBusinessLogic
+    public interface IContactGroupBusinessLogic
     {
-        IEnumerable<PhoneBook> GetAllPhoneBooks();
+        IEnumerable<ContactGroup> GetAllContactGroups();
     }
 }

@@ -9,24 +9,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContactSync.Api.Controllers
 {
-    [Route("api/PhoneBook/{phoneBookId}/PhoneBookEntry")]
-    public class PhoneBookEntryController : BaseController
+    [Route("api/ContactGroup/{contactGroupId}/Contact")]
+    public class ContactController : BaseController
     {
-        private readonly IPhoneBookEntryBusinessLogic phoneBookEntryBusinessLogic;
+        private readonly IContactBusinessLogic contactBusinessLogic;
 
-        public PhoneBookEntryController(IMapper mapper, IPhoneBookEntryBusinessLogic phoneBookEntryBusinessLogic) : base (mapper)
+        public ContactController(IMapper mapper, IContactBusinessLogic contactBusinessLogic) : base (mapper)
         {
-            this.phoneBookEntryBusinessLogic = phoneBookEntryBusinessLogic;
+            this.contactBusinessLogic = contactBusinessLogic;
         }
 
         [HttpGet]
-        public IActionResult Search(long phoneBookId, [FromQuery] string search)
+        public IActionResult Search(long contactGroupId, [FromQuery] string search)
         {
             try
             {
-                var phoneBookEntries = phoneBookEntryBusinessLogic.SearchPhoneBookEntries(phoneBookId, search);
+                var contacts = contactBusinessLogic.SearchContacts(contactGroupId, search);
 
-                return Ok(Mapper.Map<IEnumerable<PhoneBookEntry>, IEnumerable<PhoneBookEntryDto>>(phoneBookEntries));
+                return Ok(Mapper.Map<IEnumerable<Contact>, IEnumerable<ContactDto>>(contacts));
             }
             catch (BusinessRuleException bre)
             {
@@ -42,14 +42,14 @@ namespace ContactSync.Api.Controllers
 
 
         [HttpGet]
-        [Route("{phoneBookEntryId}")]
-        public IActionResult GetByPhoneBookEntryId(long phoneBookId, long phoneBookEntryId)
+        [Route("{contactId}")]
+        public IActionResult GetByContactById(long contactGroupId, long contactId)
         {
             try
             {
-                var phoneBookEntry = phoneBookEntryBusinessLogic.GetPhoneBookEntryById(phoneBookId, phoneBookEntryId);
+                var contact = contactBusinessLogic.GetContactById(contactGroupId, contactId);
 
-                return Ok(Mapper.Map<PhoneBookEntry, PhoneBookEntryDto>(phoneBookEntry));
+                return Ok(Mapper.Map<Contact, ContactDto>(contact));
             }
             catch (BusinessRuleException bre)
             {
@@ -65,17 +65,17 @@ namespace ContactSync.Api.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(long phoneBookId, [FromBody]PhoneBookEntryDto phoneBookEntryDto)
+        public IActionResult Post(long contactGroupId, [FromBody]ContactDto contactDto)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var phoneBookEntry = Mapper.Map<PhoneBookEntryDto, PhoneBookEntry>(phoneBookEntryDto);
+                    var contact = Mapper.Map<ContactDto, Contact>(contactDto);
 
-                    phoneBookEntryBusinessLogic.AddPhoneBookEntryToPhoneBook(phoneBookId, phoneBookEntry);
+                    contactBusinessLogic.AddContactToContactGroup(contactGroupId, contact);
 
-                    return Created($"/api/PhoneBook/{phoneBookEntry.PhoneBook.Id}/PhoneBookEntry/{phoneBookEntry.Id}", Mapper.Map<PhoneBookEntry, PhoneBookEntryDto>(phoneBookEntry));
+                    return Created($"/api/PhoneBook/{contact.ContactGroup.Id}/PhoneBookEntry/{contact.Id}", Mapper.Map<Contact, ContactDto>(contact));
                 }
 
                 return BadRequest(ModelState);

@@ -8,10 +8,10 @@ namespace ContactSync.Api
     {
         public MappingProfile()
         {
-            CreateMap<PhoneBookDto, PhoneBook>()
+            CreateMap<ContactGroupDto, ContactGroup>()
                 .ReverseMap();
 
-            CreateMap<PhoneBookEntryDto, PhoneBookEntry>()
+            CreateMap<ContactDto, Contact>()
                 .ReverseMap();
         }
     }

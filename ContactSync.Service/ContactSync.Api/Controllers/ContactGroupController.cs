@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace ContactSync.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class PhoneBookController : BaseController
+    public class ContactGroupController : BaseController
     {
-        private readonly IPhoneBookBusinessLogic phoneBookBusinessLogic;
+        private readonly IContactGroupBusinessLogic contactGroupBusinessLogic;
 
-        public PhoneBookController(IMapper mapper, IPhoneBookBusinessLogic phoneBookBusinessLogic) : base(mapper)
+        public ContactGroupController(IMapper mapper, IContactGroupBusinessLogic contactGroupBusinessLogic) : base(mapper)
         {
-            this.phoneBookBusinessLogic = phoneBookBusinessLogic;
+            this.contactGroupBusinessLogic = contactGroupBusinessLogic;
         }
 
         [HttpGet]
@@ -23,10 +23,10 @@ namespace ContactSync.Api.Controllers
         {
             try
             {
-                var phoneBooks = phoneBookBusinessLogic.GetAllPhoneBooks();
-                var dtoPhoneBooks = Mapper.Map<IEnumerable<PhoneBook>, IEnumerable<PhoneBookDto>>(phoneBooks);
+                var contactGroups = contactGroupBusinessLogic.GetAllContactGroups();
+                var dtoContactGroups = Mapper.Map<IEnumerable<ContactGroup>, IEnumerable<ContactGroupDto>>(contactGroups);
 
-                return Ok(dtoPhoneBooks);
+                return Ok(dtoContactGroups);
             }
             catch (Exception ex)
             {

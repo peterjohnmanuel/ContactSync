@@ -8,29 +8,29 @@ using System.Linq;
 
 namespace ContactSync.Repository
 {
-    public class PhoneBookRepository : IPhoneBookRepository
+    public class ContactGroupRepository : IContactGroupRepository
     {
         private readonly ContactSyncContext contactSyncContext;
 
-        public PhoneBookRepository(ContactSyncContext contactSyncContext)
+        public ContactGroupRepository(ContactSyncContext contactSyncContext)
         {
             this.contactSyncContext = contactSyncContext;
         }
 
-        public int AddNewPhoneBook(PhoneBook phoneBook)
+        public int AddContactGroup(ContactGroup phoneBook)
         {
-            contactSyncContext.PhoneBooks.Add(phoneBook);
+            contactSyncContext.ContactGroups.Add(phoneBook);
             return Save();
         }
 
-        public IEnumerable<PhoneBook> GetAllPhoneBooks()
+        public IEnumerable<ContactGroup> GetAllContactGroups()
         {
-            return contactSyncContext.PhoneBooks.ToList();
+            return contactSyncContext.ContactGroups.ToList();
         }
 
-        public PhoneBook GetPhoneBookById(long id, string includedFields = "")
+        public ContactGroup GetContactGroupById(long id, string includedFields = "")
         {
-            IQueryable<PhoneBook> phoneBooksQuery = contactSyncContext.PhoneBooks;
+            IQueryable<ContactGroup> phoneBooksQuery = contactSyncContext.ContactGroups;
 
             phoneBooksQuery = phoneBooksQuery.Where(x => x.Id == id);
 
@@ -43,7 +43,7 @@ namespace ContactSync.Repository
             return phoneBooksQuery.FirstOrDefault();
         }
 
-        public int UpdatePhoneBook(PhoneBook phoneBook)
+        public int UpdateContactGroup(ContactGroup phoneBook)
         {
             contactSyncContext.Attach(phoneBook);
             contactSyncContext.Entry(phoneBook).State = EntityState.Modified;

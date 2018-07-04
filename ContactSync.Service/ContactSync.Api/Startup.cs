@@ -37,11 +37,11 @@ namespace ContactSync.Api
             services.AddDbContext<ContactSyncContext>(db => db.UseInMemoryDatabase());
 
             // Repository Services
-            services.AddScoped<IPhoneBookRepository, PhoneBookRepository>();
+            services.AddScoped<IContactGroupRepository, ContactGroupRepository>();
 
             // Business Logic Services
-            services.AddScoped<IPhoneBookBusinessLogic, PhoneBookBusinessLogic>();
-            services.AddScoped<IPhoneBookEntryBusinessLogic, PhoneBookEntryBusinessLogic>();
+            services.AddScoped<IContactGroupBusinessLogic, ContactGroupBusinessLogic>();
+            services.AddScoped<IContactBusinessLogic, ContactBusinessLogic>();
 
             services.AddTransient<ContactSyncSeedData>();
 

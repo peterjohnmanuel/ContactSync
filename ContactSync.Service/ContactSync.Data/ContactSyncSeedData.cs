@@ -19,64 +19,64 @@ namespace ContactSync.Data
         {
             contactSyncContext.Database.EnsureCreated();
 
-            if (!contactSyncContext.PhoneBooks.Any())
+            if (!contactSyncContext.ContactGroups.Any())
             {
-                var phonebookData = new List<PhoneBook>
+                var contactData = new List<ContactGroup>
                 {
-                    new PhoneBook
+                    new ContactGroup
                     {
                         Name = "Family",
-                        PhoneBookEntries = new List<PhoneBookEntry>
+                        ContactGroups = new List<Contact>
                         {
-                            new PhoneBookEntry
+                            new Contact
                             {
                                 Name = "Garth",
                                 PhoneNumber = "0847694322"
                             }
                         }
                     },
-                    new PhoneBook
+                    new ContactGroup
                     {
                         Name = "Friends",
-                        PhoneBookEntries = new List<PhoneBookEntry>()
+                        ContactGroups = new List<Contact>()
                         {
-                            new PhoneBookEntry
+                            new Contact
                             {
                                 Name = "Sheldon",
                                 PhoneNumber = "0694521839"
                             }
                         }
                     },
-                    new PhoneBook
+                    new ContactGroup
                     {
                         Name = "Work Colleagues",
-                        PhoneBookEntries = new List<PhoneBookEntry>()
+                        ContactGroups = new List<Contact>()
                         {
-                            new PhoneBookEntry
+                            new Contact
                             {
                                 Name = "Jamie",
                                 PhoneNumber = "0746912384"
                             }
                         }
                     },
-                    new PhoneBook
+                    new ContactGroup
                     {
                         Name = "Business Contacts",
-                        PhoneBookEntries = new List<PhoneBookEntry>()
+                        ContactGroups = new List<Contact>()
                         {
-                            new PhoneBookEntry
+                            new Contact
                             {
                                 Name = "PG Glass",
                                 PhoneNumber = "084692135"
                             }
                         }
                     },
-                    new PhoneBook
+                    new ContactGroup
                     {
                         Name = "Emergancy Contacts",
-                        PhoneBookEntries = new List<PhoneBookEntry>()
+                        ContactGroups = new List<Contact>()
                         {
-                            new PhoneBookEntry
+                            new Contact
                             {
                                 Name = "Fraud Reporting",
                                 PhoneNumber = "0846912580"
@@ -85,7 +85,7 @@ namespace ContactSync.Data
                     }
                 };
 
-                contactSyncContext.PhoneBooks.AddRange(phonebookData);
+                contactSyncContext.ContactGroups.AddRange(contactData);
             }
 
             contactSyncContext.SaveChanges();
