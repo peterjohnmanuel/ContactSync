@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using ContactSync.Common;
 using ContactSync.Dto;
@@ -18,14 +19,35 @@ namespace ContactSync.Api.Controllers
             this.phoneBookEntryBusinessLogic = phoneBookEntryBusinessLogic;
         }
 
-
         [HttpGet]
-        [Route("{phoneBoodEntryId}")]
-        public IActionResult Get(long phoneBookId, long phoneBoodEntryId)
+        public IActionResult Search(long phoneBookId, [FromQuery] string search)
         {
             try
             {
-                var phoneBookEntry = phoneBookEntryBusinessLogic.GetPhoneBookEntryById(phoneBookId, phoneBoodEntryId);
+                var phoneBookEntries = phoneBookEntryBusinessLogic.SearchPhoneBookEntries(phoneBookId, search);
+
+                return Ok(Mapper.Map<IEnumerable<PhoneBookEntry>, IEnumerable<PhoneBookEntryDto>>(phoneBookEntries));
+            }
+            catch (BusinessRuleException bre)
+            {
+                return BadRequest(bre.Message);
+            }
+            catch (Exception ex)
+            {
+                // todo: Remove generic exception.
+                // todo: Add logging exception.
+                return BadRequest("");
+            }
+        }
+
+
+        [HttpGet]
+        [Route("{phoneBookEntryId}")]
+        public IActionResult GetByPhoneBookEntryId(long phoneBookId, long phoneBookEntryId)
+        {
+            try
+            {
+                var phoneBookEntry = phoneBookEntryBusinessLogic.GetPhoneBookEntryById(phoneBookId, phoneBookEntryId);
 
                 return Ok(Mapper.Map<PhoneBookEntry, PhoneBookEntryDto>(phoneBookEntry));
             }

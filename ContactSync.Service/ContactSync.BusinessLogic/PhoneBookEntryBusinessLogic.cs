@@ -3,10 +3,8 @@ using ContactSync.Common.ValidationMessages;
 using ContactSync.Entities;
 using ContactSync.IBusinessLogic;
 using ContactSync.IRepository;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ContactSync.BusinessLogic
 {
@@ -37,7 +35,6 @@ namespace ContactSync.BusinessLogic
             return phoneBookEntry;
         }
 
-
         public PhoneBookEntry GetPhoneBookEntryById(long phoneBookId, long phoneBookEntryId)
         {
             var phoneBook = phoneBookRepository.GetPhoneBookById(phoneBookId, "PhoneBookEntries");
@@ -51,6 +48,23 @@ namespace ContactSync.BusinessLogic
                 throw new BusinessRuleException(ValidationMessages.PhoneBookEntryNotFound);
 
             return phoneBookEntry;
+        }
+
+        public IEnumerable<PhoneBookEntry> SearchPhoneBookEntries(long phoneBookId, string search = "")
+        {
+            var phoneBook = phoneBookRepository.GetPhoneBookById(phoneBookId, "PhoneBookEntries");
+
+            if (phoneBook == null)
+                throw new BusinessRuleException(ValidationMessages.PhoneBookNotFound);
+
+            var phoneBookEntries = phoneBook.PhoneBookEntries
+                .Where(x => 
+                
+                    x.Name.ToLower().Contains(search.ToLower())
+                    || x.PhoneNumber.ToLower().Contains(search.ToLower())
+                );
+
+            return phoneBookEntries;
         }
     }
 }
