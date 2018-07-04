@@ -7,8 +7,10 @@ namespace ContactSync.IRepository
     {
         IEnumerable<PhoneBook> GetAllPhoneBooks();
 
-        PhoneBook GetPhoneBookById(long id);
+        PhoneBook GetPhoneBookById(long id, string includedFields = "");
 
         int AddNewPhoneBook(PhoneBook phoneBook);
+
+        int UpdatePhoneBook(PhoneBook phoneBook);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using ContactSync.Dto;
 using ContactSync.Entities;
-using ContactSync.IRepository;
+using ContactSync.IBusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactSync.Api.Controllers
@@ -11,11 +11,11 @@ namespace ContactSync.Api.Controllers
     [Route("api/[controller]")]
     public class PhoneBookController : BaseController
     {
-        private readonly IPhoneBookRepository phoneBookRepository;
+        private readonly IPhoneBookBusinessLogic phoneBookBusinessLogic;
 
-        public PhoneBookController(IMapper mapper, IPhoneBookRepository phoneBookRepository) : base(mapper)
+        public PhoneBookController(IMapper mapper, IPhoneBookBusinessLogic phoneBookBusinessLogic) : base(mapper)
         {
-            this.phoneBookRepository = phoneBookRepository;
+            this.phoneBookBusinessLogic = phoneBookBusinessLogic;
         }
 
         [HttpGet]
@@ -23,7 +23,7 @@ namespace ContactSync.Api.Controllers
         {
             try
             {
-                var phoneBooks = phoneBookRepository.GetAllPhoneBooks();
+                var phoneBooks = phoneBookBusinessLogic.GetAllPhoneBooks();
                 var dtoPhoneBooks = Mapper.Map<IEnumerable<PhoneBook>, IEnumerable<PhoneBookDto>>(phoneBooks);
 
                 return Ok(dtoPhoneBooks);

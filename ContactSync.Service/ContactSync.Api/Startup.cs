@@ -41,6 +41,7 @@ namespace ContactSync.Api
 
             // Business Logic Services
             services.AddScoped<IPhoneBookBusinessLogic, PhoneBookBusinessLogic>();
+            services.AddScoped<IPhoneBookEntryBusinessLogic, PhoneBookEntryBusinessLogic>();
 
             services.AddTransient<ContactSyncSeedData>();
 

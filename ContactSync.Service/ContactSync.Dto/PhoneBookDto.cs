@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace ContactSync.Dto
 {
@@ -6,5 +6,6 @@ namespace ContactSync.Dto
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public ICollection<PhoneBookEntryDto> PhoneBookEntries { get; set; }
     }
 }

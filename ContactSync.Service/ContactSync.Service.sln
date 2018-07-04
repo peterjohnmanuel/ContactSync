@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C1468923-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.Data", "ContactSync.Data\ContactSync.Data.csproj", "{11C84564-6337-430E-8D63-3174EE01581E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{20F4370F-3232-4300-88B0-2018DC259464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSync.Common", "ContactSync.Common\ContactSync.Common.csproj", "{EB931CC5-584E-4892-BAE1-E118546BC9F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{11C84564-6337-430E-8D63-3174EE01581E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11C84564-6337-430E-8D63-3174EE01581E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11C84564-6337-430E-8D63-3174EE01581E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB931CC5-584E-4892-BAE1-E118546BC9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB931CC5-584E-4892-BAE1-E118546BC9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB931CC5-584E-4892-BAE1-E118546BC9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB931CC5-584E-4892-BAE1-E118546BC9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,7 @@ Global
 		{55C5EF45-8DE0-4CB6-B54E-163381DFDB6A} = {88C56463-B8E3-453B-ACE6-2F8B1C35746D}
 		{4143617B-E489-405A-B392-567C3A8E7B51} = {5BD5495D-BE46-4F79-B040-CB6902658050}
 		{11C84564-6337-430E-8D63-3174EE01581E} = {C1468923-34A8-4210-ACA3-89BE58F06D7E}
+		{EB931CC5-584E-4892-BAE1-E118546BC9F9} = {20F4370F-3232-4300-88B0-2018DC259464}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8741E4C9-4B96-4844-B402-462749C82BF6}

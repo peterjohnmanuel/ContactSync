@@ -2,6 +2,7 @@
 using ContactSync.Context;
 using ContactSync.Entities;
 using ContactSync.IRepository;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,9 +28,27 @@ namespace ContactSync.Repository
             return contactSyncContext.PhoneBooks.ToList();
         }
 
-        public PhoneBook GetPhoneBookById(long id)
+        public PhoneBook GetPhoneBookById(long id, string includedFields = "")
         {
-            return contactSyncContext.PhoneBooks.Find(id);
+            IQueryable<PhoneBook> phoneBooksQuery = contactSyncContext.PhoneBooks;
+
+            phoneBooksQuery = phoneBooksQuery.Where(x => x.Id == id);
+
+            if (!string.IsNullOrEmpty(includedFields))
+            {
+                foreach (var field in includedFields.Split(",", System.StringSplitOptions.RemoveEmptyEntries))
+                    phoneBooksQuery = phoneBooksQuery.Include(field);
+            }
+
+            return phoneBooksQuery.FirstOrDefault();
+        }
+
+        public int UpdatePhoneBook(PhoneBook phoneBook)
+        {
+            contactSyncContext.Attach(phoneBook);
+            contactSyncContext.Entry(phoneBook).State = EntityState.Modified;
+
+            return Save();
         }
 
         private int Save()
