@@ -7,12 +7,12 @@ namespace ContactSync.Dto
     {
         public long Id { get; set; }
 
-        [Required(ErrorMessageResourceName = "EntryNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
-        [StringLength(30, MinimumLength = 3, ErrorMessageResourceName = "EntryNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
-        public string Name { get; set; }
+        [Required(ErrorMessageResourceName = "ContactFirstNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
+        [StringLength(30, MinimumLength = 3, ErrorMessageResourceName = "ContactFirstNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
+        public string FirstName { get; set; }
 
-        [Required(ErrorMessageResourceName = "PhoneNumberNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
-        [RegularExpression(@"[1-9]{9}$", ErrorMessageResourceName = "PhoneNumberNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
-        public string PhoneNumber { get; set; }
+        [Required(ErrorMessageResourceName = "MobileNumberNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
+        [RegularExpression(@"[1-9]{9}$", ErrorMessageResourceName = "MobileNumberNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
+        public string MobileNumber { get; set; }
     }
 }

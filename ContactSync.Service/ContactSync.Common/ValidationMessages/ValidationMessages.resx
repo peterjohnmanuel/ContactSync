@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContactFirstNameNotValid" xml:space="preserve">
+    <value>Contact first name is required and must have between 3 and 30 characters</value>
+  </data>
+  <data name="ContactGroupNameNotValid" xml:space="preserve">
+    <value>Contact group name is required and must have between 3 and 30 characters</value>
+  </data>
   <data name="ContactGroupNotFound" xml:space="preserve">
     <value>Contact group not found.</value>
-  </data>
-  <data name="ContactNameNotValid" xml:space="preserve">
-    <value>Contact name is required and must have between 3 and 30 characters</value>
   </data>
   <data name="ContactNotFound" xml:space="preserve">
     <value>Contact not found.</value>
   </data>
-  <data name="PhoneNumberNotValid" xml:space="preserve">
-    <value>Phone number is not valid. Number may not start with 0 and must be 9 digits.</value>
+  <data name="MobileNumberNotValid" xml:space="preserve">
+    <value>Mobile number is not valid. Number may not start with 0 and must be 9 digits.</value>
   </data>
 </root>

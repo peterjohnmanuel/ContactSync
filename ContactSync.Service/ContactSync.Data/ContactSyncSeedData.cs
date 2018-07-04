@@ -30,8 +30,8 @@ namespace ContactSync.Data
                         {
                             new Contact
                             {
-                                Name = "Garth",
-                                PhoneNumber = "0847694322"
+                                FirstName = "Garth",
+                                HomeNumber = "0847694322"
                             }
                         }
                     },
@@ -42,8 +42,8 @@ namespace ContactSync.Data
                         {
                             new Contact
                             {
-                                Name = "Sheldon",
-                                PhoneNumber = "0694521839"
+                                FirstName = "Sheldon",
+                                HomeNumber = "0694521839"
                             }
                         }
                     },
@@ -54,8 +54,8 @@ namespace ContactSync.Data
                         {
                             new Contact
                             {
-                                Name = "Jamie",
-                                PhoneNumber = "0746912384"
+                                FirstName = "Jamie",
+                                HomeNumber = "0746912384"
                             }
                         }
                     },
@@ -66,8 +66,8 @@ namespace ContactSync.Data
                         {
                             new Contact
                             {
-                                Name = "PG Glass",
-                                PhoneNumber = "084692135"
+                                FirstName = "PG Glass",
+                                HomeNumber = "084692135"
                             }
                         }
                     },
@@ -78,8 +78,8 @@ namespace ContactSync.Data
                         {
                             new Contact
                             {
-                                Name = "Fraud Reporting",
-                                PhoneNumber = "0846912580"
+                                FirstName = "Fraud Reporting",
+                                HomeNumber = "0846912580"
                             }
                         }
                     }

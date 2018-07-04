@@ -60,8 +60,8 @@ namespace ContactSync.BusinessLogic
             var contacts = contactGroups.Contacts
                 .Where(x => 
                 
-                    x.Name.ToLower().Contains(search.ToLower())
-                    || x.PhoneNumber.ToLower().Contains(search.ToLower())
+                    x.FirstName.ToLower().Contains(search.ToLower())
+                    || x.HomeNumber.ToLower().Contains(search.ToLower())
                 );
 
             return contacts;

@@ -61,20 +61,29 @@ namespace ContactSync.Common.ValidationMessages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact first name is required and must have between 3 and 30 characters.
+        /// </summary>
+        public static string ContactFirstNameNotValid {
+            get {
+                return ResourceManager.GetString("ContactFirstNameNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact group name is required and must have between 3 and 30 characters.
+        /// </summary>
+        public static string ContactGroupNameNotValid {
+            get {
+                return ResourceManager.GetString("ContactGroupNameNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact group not found..
         /// </summary>
         public static string ContactGroupNotFound {
             get {
                 return ResourceManager.GetString("ContactGroupNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact name is required and must have between 3 and 30 characters.
-        /// </summary>
-        public static string ContactNameNotValid {
-            get {
-                return ResourceManager.GetString("ContactNameNotValid", resourceCulture);
             }
         }
         
@@ -88,11 +97,11 @@ namespace ContactSync.Common.ValidationMessages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone number is not valid. Number may not start with 0 and must be 9 digits..
+        ///   Looks up a localized string similar to Mobile number is not valid. Number may not start with 0 and must be 9 digits..
         /// </summary>
-        public static string PhoneNumberNotValid {
+        public static string MobileNumberNotValid {
             get {
-                return ResourceManager.GetString("PhoneNumberNotValid", resourceCulture);
+                return ResourceManager.GetString("MobileNumberNotValid", resourceCulture);
             }
         }
     }
