@@ -1,4 +1,5 @@
-﻿using ContactSync.Context;
+﻿
+using ContactSync.Context;
 using ContactSync.Entities;
 using ContactSync.IRepository;
 using System.Collections.Generic;

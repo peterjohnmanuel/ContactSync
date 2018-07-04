@@ -1,4 +1,5 @@
-﻿using ContactSync.Entities;
+﻿using System.Linq;
+using ContactSync.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContactSync.Context
