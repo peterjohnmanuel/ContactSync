@@ -61,6 +61,15 @@ namespace ContactSync.Common.ValidationMessages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entry name is required and must have between 3 and 30 characters.
+        /// </summary>
+        public static string EntryNameNotValid {
+            get {
+                return ResourceManager.GetString("EntryNameNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone book entry not found..
         /// </summary>
         public static string PhoneBookEntryNotFound {
@@ -75,6 +84,15 @@ namespace ContactSync.Common.ValidationMessages {
         public static string PhoneBookNotFound {
             get {
                 return ResourceManager.GetString("PhoneBookNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number is not valid. Number may not start with 0 and must be 9 digits..
+        /// </summary>
+        public static string PhoneNumberNotValid {
+            get {
+                return ResourceManager.GetString("PhoneNumberNotValid", resourceCulture);
             }
         }
     }

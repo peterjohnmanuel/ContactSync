@@ -69,11 +69,17 @@ namespace ContactSync.Api.Controllers
         {
             try
             {
-                var phoneBookEntry = Mapper.Map<PhoneBookEntryDto, PhoneBookEntry>(phoneBookEntryDto);
+                if (ModelState.IsValid)
+                {
+                    var phoneBookEntry = Mapper.Map<PhoneBookEntryDto, PhoneBookEntry>(phoneBookEntryDto);
 
-                phoneBookEntryBusinessLogic.AddPhoneBookEntryToPhoneBook(phoneBookId, phoneBookEntry);
-               
-                return Created($"/api/PhoneBook/{phoneBookEntry.PhoneBook.Id}/PhoneBookEntry/{phoneBookEntry.Id}", Mapper.Map<PhoneBookEntry,PhoneBookEntryDto>(phoneBookEntry));
+                    phoneBookEntryBusinessLogic.AddPhoneBookEntryToPhoneBook(phoneBookId, phoneBookEntry);
+
+                    return Created($"/api/PhoneBook/{phoneBookEntry.PhoneBook.Id}/PhoneBookEntry/{phoneBookEntry.Id}", Mapper.Map<PhoneBookEntry, PhoneBookEntryDto>(phoneBookEntry));
+                }
+
+                return BadRequest(ModelState);
+                
             }
             catch(BusinessRuleException bre)
             {
