@@ -66,5 +66,28 @@ namespace ContactSync.BusinessLogic
 
             return contacts;
         }
+
+        public Contact UpdateContactInfo(long contactGroupId, long contactId, Contact contact)
+        {
+            var contactGroup = contactGroupRepository.GetContactGroupById(contactGroupId, "Contacts");
+
+            if (contactGroup == null)
+                throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
+
+            var existingContact = contactGroup.Contacts.FirstOrDefault(x => x.Id == contactId);
+
+            if (existingContact == null)
+                throw new BusinessRuleException(ValidationMessages.ContactNotFound);
+
+            existingContact.FirstName = !string.IsNullOrEmpty(contact.FirstName) ? contact.FirstName : existingContact.FirstName;
+            existingContact.LastName = !string.IsNullOrEmpty(contact.LastName) ? contact.LastName : existingContact.LastName;
+            existingContact.HomeNumber = !string.IsNullOrEmpty(contact.HomeNumber) ? contact.HomeNumber : existingContact.HomeNumber;
+            existingContact.MobileNumber = !string.IsNullOrEmpty(contact.MobileNumber) ? contact.MobileNumber : existingContact.MobileNumber;
+            existingContact.Email = !string.IsNullOrEmpty(contact.Email) ? contact.Email : existingContact.Email;
+
+            contactGroupRepository.UpdateContactGroup(contactGroup);
+
+            return existingContact;
+        }
     }
 }

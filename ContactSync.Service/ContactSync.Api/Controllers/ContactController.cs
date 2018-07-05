@@ -92,5 +92,35 @@ namespace ContactSync.Api.Controllers
                 return BadRequest("");
             }
         }
+
+        [HttpPatch]
+        [Route("{contactId}")]
+        public IActionResult Patch(long contactGroupId, long contactId, [FromBody]ContactDto contactDto)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var contact = Mapper.Map<ContactDto, Contact>(contactDto);
+
+                    var updatedContact = contactBusinessLogic.UpdateContactInfo(contactGroupId, contactId, contact);
+
+                    return Ok(Mapper.Map<Contact, ContactDto>(updatedContact));
+                }
+
+                return BadRequest(ModelState);
+
+            }
+            catch (BusinessRuleException bre)
+            {
+                return BadRequest(bre.Message);
+            }
+            catch (Exception ex)
+            {
+                // todo: Remove generic exception.
+                // todo: Add logging exception.
+                return BadRequest("");
+            }
+        }
     }
 }

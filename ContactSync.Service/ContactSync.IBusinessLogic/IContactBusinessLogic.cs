@@ -10,5 +10,7 @@ namespace ContactSync.IBusinessLogic
         Contact GetContactById(long contactGroupId, long contactId);
 
         IEnumerable<Contact> SearchContacts(long contactGroupId, string search = "");
+
+        Contact UpdateContactInfo(long contactGroupId, long contactId, Contact contact);
     }
 }
