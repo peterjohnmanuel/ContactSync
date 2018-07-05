@@ -1,21 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NavigationModule } from './navigation/navigation.module';
 
 import { AppComponent } from './app.component';
-import { ContactGroupsComponent } from './contact-groups/contact-groups.component';
+
+import { ContactGroupService } from './shared/services/contact-group-service';
+import { ContactGroupListComponent } from './contactGroups/contact-group-list/contact-group-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactGroupsComponent
+    ContactGroupListComponent
   ],
   imports: [
     BrowserModule,
-    NavigationModule
+    NavigationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactGroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

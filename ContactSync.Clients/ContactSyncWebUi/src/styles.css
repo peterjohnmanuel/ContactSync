@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-contact-sync-theme {
+    color:#dc3545;
+    background-color:  #fff;
+    border-color: #dc3545;
+}

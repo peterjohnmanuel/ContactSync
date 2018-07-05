@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { ContactGroupsComponent } from '../contact-groups/contact-groups.component';
+
+import { ContactGroupListComponent  } from '../contactGroups/contact-group-list/contact-group-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/contactgroup', pathMatch: 'full' },
-  { path: 'contactgroup', component: ContactGroupsComponent },
+  { path: 'contactgroup', component: ContactGroupListComponent },
 
 ];
 
