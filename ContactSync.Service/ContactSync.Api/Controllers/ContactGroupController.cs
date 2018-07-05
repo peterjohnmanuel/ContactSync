@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using ContactSync.Common;
 using ContactSync.Dto;
 using ContactSync.Entities;
 using ContactSync.IBusinessLogic;
@@ -36,6 +37,29 @@ namespace ContactSync.Api.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("{contactGroupId}")]
+        public IActionResult GetById(long contactGroupId)
+        {
+            try
+            {
+                var contactGroup = contactGroupBusinessLogic.GetContactGroupById(contactGroupId);
+                var dtoContactGroup = Mapper.Map<ContactGroup, ContactGroupDto>(contactGroup);
+
+                return Ok(dtoContactGroup);
+            }
+            catch (BusinessRuleException bre)
+            {
+                return BadRequest(bre.Message);
+            }
+            catch (Exception ex)
+            {
+                // todo: Remove generic exception.
+                // todo: Add logging exception.
+                return BadRequest("");
+            }
+        }
+
         [HttpPatch]
         [Route("{contactGroupId}")]
         public IActionResult Patch(long contactGroupId, [FromBody]ContactGroupDto contactGroupDto)
@@ -53,6 +77,10 @@ namespace ContactSync.Api.Controllers
 
                 return BadRequest(ModelState);
 
+            }
+            catch (BusinessRuleException bre)
+            {
+                return BadRequest(bre.Message);
             }
             catch (Exception ex)
             {

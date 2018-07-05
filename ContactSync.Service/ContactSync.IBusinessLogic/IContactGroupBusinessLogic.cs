@@ -7,6 +7,8 @@ namespace ContactSync.IBusinessLogic
     {
         IEnumerable<ContactGroup> GetAllContactGroups();
 
+        ContactGroup GetContactGroupById(long contactGroupId);
+
         int UpdateContactGroup(long contactGroupId, ContactGroup contactGroup);
     }
 }

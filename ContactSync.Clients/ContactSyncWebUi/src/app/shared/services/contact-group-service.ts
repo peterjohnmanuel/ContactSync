@@ -14,4 +14,12 @@ export class ContactGroupService {
          return this.http.get<ContactGroup[]>(this.host + 'ContactGroup');
     }
 
+    public getContactGroup(id): Observable<ContactGroup> {
+        return this.http.get<ContactGroup>(this.host + 'ContactGroup/' + id);
+   }
+
+   public patchContactGroup(id, contactGroup): Observable<ContactGroup> {
+    return this.http.patch<ContactGroup>(this.host + 'ContactGroup/' + id, contactGroup);
+   }
+
 }

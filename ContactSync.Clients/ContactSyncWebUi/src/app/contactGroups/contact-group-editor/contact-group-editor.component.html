@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12 ">
+  
+      <form (submit)="onUpdateContactGroup()" #theForm="ngForm" novalidate>
+
+        <h2>Contact Group Editor</h2>
+  
+  
+        <div class="">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" [ngModel]="contactGroup?.name" (ngModelChange)="contactGroup.name=$event" #heading="ngModel" required />            
+          </div>
+        </div>
+  
+        <div id="buttons">
+  
+          <button class="btn btn-danger" (click)="goBack()">
+            <span class="fa fa-hand-o-left"></span>
+          </button>
+  
+          <button type="submit" class="btn btn-danger" [disabled]="theForm.invalid">
+            <span class="fa fa-save"></span>
+          </button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

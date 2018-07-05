@@ -69,7 +69,10 @@ namespace ContactSync.Api
                 }
             }
 
-            app.UseCors(x => x.WithOrigins(Configuration["Origin:ContactSyncWebUI"]).AllowAnyMethod());
+            app.UseCors(x => x.WithOrigins(Configuration["Origin:ContactSyncWebUI"])
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowAnyOrigin());
 
             app.UseSwagger();
 

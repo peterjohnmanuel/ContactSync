@@ -21,6 +21,16 @@ namespace ContactSync.BusinessLogic
             return contactGroupRepository.GetAllContactGroups();
         }
 
+        public ContactGroup GetContactGroupById(long contactGroupId)
+        {
+            var contactGroupExisting = contactGroupRepository.GetContactGroupById(contactGroupId);
+
+            if (contactGroupExisting == null)
+                throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
+
+            return contactGroupExisting;
+        }
+
         public int UpdateContactGroup(long contactGroupId, ContactGroup contactGroup)
         {
             var contactGroupExisting = contactGroupRepository.GetContactGroupById(contactGroupId);
