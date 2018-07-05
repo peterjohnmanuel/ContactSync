@@ -35,5 +35,31 @@ namespace ContactSync.Api.Controllers
                 return BadRequest("");
             }
         }
+
+        [HttpPatch]
+        [Route("{contactGroupId}")]
+        public IActionResult Patch(long contactGroupId, [FromBody]ContactGroupDto contactGroupDto)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var contactGroup = Mapper.Map<ContactGroupDto, ContactGroup>(contactGroupDto);
+                    contactGroupBusinessLogic.UpdateContactGroup(contactGroupId, contactGroup);
+                    var dtoContactGroup = Mapper.Map<ContactGroup, ContactGroupDto>(contactGroup);
+
+                    return Ok(dtoContactGroup);
+                }
+
+                return BadRequest(ModelState);
+
+            }
+            catch (Exception ex)
+            {
+                // todo: Remove generic exception.
+                // todo: Add logging exception.
+                return BadRequest("");
+            }
+        }
     }
 }

@@ -97,6 +97,15 @@ namespace ContactSync.Common.ValidationMessages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home number is not valid. Number may not start with 0 and must be 9 digits..
+        /// </summary>
+        public static string HomeNumberNotValid {
+            get {
+                return ResourceManager.GetString("HomeNumberNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mobile number is not valid. Number may not start with 0 and must be 9 digits..
         /// </summary>
         public static string MobileNumberNotValid {

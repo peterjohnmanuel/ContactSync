@@ -9,8 +9,8 @@ namespace ContactSync.IRepository
 
         ContactGroup GetContactGroupById(long id, string includedFields = "");
 
-        int AddContactGroup(ContactGroup phoneBook);
+        int AddContactGroup(ContactGroup contactGroup);
 
-        int UpdateContactGroup(ContactGroup phoneBook);
+        int UpdateContactGroup(ContactGroup contactGroup);
     }
 }

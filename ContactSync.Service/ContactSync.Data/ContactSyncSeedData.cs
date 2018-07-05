@@ -31,7 +31,10 @@ namespace ContactSync.Data
                             new Contact
                             {
                                 FirstName = "Garth",
-                                HomeNumber = "0847694322"
+                                LastName = "Black",
+                                HomeNumber = "847694322",
+                                MobileNumber = "749498520",
+                                Email = "GarthBlack@gmail.com"
                             }
                         }
                     },
@@ -43,7 +46,10 @@ namespace ContactSync.Data
                             new Contact
                             {
                                 FirstName = "Sheldon",
-                                HomeNumber = "0694521839"
+                                LastName = "Cooper",
+                                HomeNumber = "694521839",
+                                MobileNumber = "749498520",
+                                Email = "SheldonCooper@yahoo.com"
                             }
                         }
                     },
@@ -55,7 +61,10 @@ namespace ContactSync.Data
                             new Contact
                             {
                                 FirstName = "Jamie",
-                                HomeNumber = "0746912384"
+                                LastName = "Arendse",
+                                HomeNumber = "746912384",
+                                MobileNumber = "749498520",
+                                Email = "JamieLot@aol.com"
                             }
                         }
                     },
@@ -67,7 +76,8 @@ namespace ContactSync.Data
                             new Contact
                             {
                                 FirstName = "PG Glass",
-                                HomeNumber = "084692135"
+                                HomeNumber = "84692135",
+                                Email = "pgglass@pgglass.com"
                             }
                         }
                     },
@@ -79,7 +89,8 @@ namespace ContactSync.Data
                             new Contact
                             {
                                 FirstName = "Fraud Reporting",
-                                HomeNumber = "0846912580"
+                                HomeNumber = "846912580",
+                                Email = "fraudreporters@ct.gov"
                             }
                         }
                     }

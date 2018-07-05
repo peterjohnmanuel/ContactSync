@@ -129,6 +129,9 @@
   <data name="ContactNotFound" xml:space="preserve">
     <value>Contact not found.</value>
   </data>
+  <data name="HomeNumberNotValid" xml:space="preserve">
+    <value>Home number is not valid. Number may not start with 0 and must be 9 digits.</value>
+  </data>
   <data name="MobileNumberNotValid" xml:space="preserve">
     <value>Mobile number is not valid. Number may not start with 0 and must be 9 digits.</value>
   </data>

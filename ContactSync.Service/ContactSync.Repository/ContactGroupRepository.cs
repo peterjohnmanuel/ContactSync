@@ -17,9 +17,9 @@ namespace ContactSync.Repository
             this.contactSyncContext = contactSyncContext;
         }
 
-        public int AddContactGroup(ContactGroup phoneBook)
+        public int AddContactGroup(ContactGroup contactGroup)
         {
-            contactSyncContext.ContactGroups.Add(phoneBook);
+            contactSyncContext.ContactGroups.Add(contactGroup);
             return Save();
         }
 
@@ -43,10 +43,10 @@ namespace ContactSync.Repository
             return phoneBooksQuery.FirstOrDefault();
         }
 
-        public int UpdateContactGroup(ContactGroup phoneBook)
+        public int UpdateContactGroup(ContactGroup contactGroup)
         {
-            contactSyncContext.Attach(phoneBook);
-            contactSyncContext.Entry(phoneBook).State = EntityState.Modified;
+            contactSyncContext.Attach(contactGroup);
+            contactSyncContext.Entry(contactGroup).State = EntityState.Modified;
 
             return Save();
         }
