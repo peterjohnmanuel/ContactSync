@@ -1,0 +1,21 @@
+header {
+    margin-bottom: 2em;
+  }
+  
+  .content {
+    min-height: calc(100vh - 3em);
+  }
+  
+  
+  footer {
+    margin-top: 0.5em;
+    height: 3em;
+    background-color: #343a40!important;
+  }
+  
+  
+  footer > div {
+      color: ghostwhite;
+      padding-top: 0.75em;
+  }
+    
