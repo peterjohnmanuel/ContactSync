@@ -34,6 +34,8 @@ namespace ContactSync.Api
         {
             services.AddMvc();
 
+            services.AddCors();
+
             services.AddDbContext<ContactSyncContext>(db => db.UseInMemoryDatabase());
 
             // Repository Services
@@ -66,6 +68,8 @@ namespace ContactSync.Api
                     seeder.Seed();
                 }
             }
+
+            app.UseCors(x => x.WithOrigins(Configuration["Origin:ContactSyncWebUI"]).AllowAnyMethod());
 
             app.UseSwagger();
 

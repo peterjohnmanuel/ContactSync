@@ -11,6 +11,6 @@ namespace ContactSync.Dto
         [Required(ErrorMessageResourceName = "ContactGroupNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
         [StringLength(30, MinimumLength = 3, ErrorMessageResourceName = "ContactGroupNameNotValid", ErrorMessageResourceType = typeof(ValidationMessages))]
         public string Name { get; set; }
-        public ICollection<ContactDto> ContactGroupEntries { get; set; }
+        public ICollection<ContactDto> Contacts { get; set; }
     }
 }
