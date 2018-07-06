@@ -21,23 +21,39 @@ export class ContactListComponent implements OnInit {
 
     private contacts: Contact[];
     private contactGroup: ContactGroup;
+    private search: string;
+    private contactGroupId: any;
 
 
   ngOnInit() {
 
-    const id = +this.route.snapshot.paramMap.get('id');
+    this.contactGroupId = +this.route.snapshot.paramMap.get('id');
 
-    if (id !== 0) {
-      this.contactService.getContacts(id)
+    if (this.contactGroupId !== 0) {
+      this.contactService.getContacts(this.contactGroupId)
         .subscribe((data: Contact[]) => this.contacts = data, error => console.log(error));
 
-        this.contactGroupService.getContactGroup(id)
+        this.contactGroupService.getContactGroup(this.contactGroupId)
         .subscribe((data: ContactGroup) => this.contactGroup = data, error => console.log(error));
     }
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  searchContacts(search) {
+
+    if (search.length >= 3) {
+      this.contactService.getContactsWithSearch(this.contactGroupId, search)
+        .subscribe((data: Contact[]) => this.contacts = data, error => console.log(error));
+    }
+
+    if (search.length === 0 && this.contacts.length === 0) {
+      this.contactService.getContactsWithSearch(this.contactGroupId, search)
+        .subscribe((data: Contact[]) => this.contacts = data, error => console.log(error));
+    }
+
   }
 
 }

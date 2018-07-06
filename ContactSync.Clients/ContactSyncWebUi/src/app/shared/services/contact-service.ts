@@ -14,6 +14,10 @@ export class ContactService {
         return this.http.get<Contact[]>(this.host + 'ContactGroup/' + contactGroupId + '/Contact');
     }
 
+    public getContactsWithSearch(contactGroupId, search): Observable<Contact[]> {
+        return this.http.get<Contact[]>(this.host + 'ContactGroup/' + contactGroupId + '/Contact?search=' + search);
+    }
+
     public saveContact(contactGroupId, contact): Observable<Contact> {
         return this.http.post<Contact>(this.host + 'ContactGroup/' + contactGroupId + '/Contact', contact);
     }

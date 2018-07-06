@@ -11,6 +11,10 @@
       <span class="fa fa-plus"></span>
   </button>
 
+  <div>
+    <input class="form-control" type="text" placeholder="search" [ngModel]="search" (ngModelChange)="searchContacts($event)">
+  </div>
+
 </div>
 
 
