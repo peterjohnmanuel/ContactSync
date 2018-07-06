@@ -1,0 +1,11 @@
+.btn-toolbar{ 
+    margin: 1em 0;
+}
+
+#buttons button:nth-child(2) {
+    margin: 0 0.25em;
+}
+
+.contact {
+    margin: 1em 0em;
+}

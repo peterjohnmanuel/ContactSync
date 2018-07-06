@@ -1,0 +1,20 @@
+
+<div *ngFor="let cg of contactGroups">
+    <div class="contact-group ">
+        <div class="card rounded-0">
+            <div class="card-body">
+              <span class="text-left">
+                  {{ cg.name }}
+              </span>
+              <div class="text-right">                  
+                  <div class="" role="toolbar" aria-label="Contact Actions">
+                      <div class="btn-group mr-2" role="group" aria-label="Contact Actions group">
+                        <button type="button" class="btn btn-contact-sync-theme" routerLink="/contactgroup/edit/{{cg.id}}"><span class="fa fa-edit"></span></button>
+                        <button type="button" class="btn btn-contact-sync-theme" routerLink="/contactgroup/{{cg.id}}/contactlist"><span class="fa fa-address-book"></span></button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

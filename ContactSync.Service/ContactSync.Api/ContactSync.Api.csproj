@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContactSync.BusinessLogic\ContactSync.BusinessLogic.csproj" />
+    <ProjectReference Include="..\ContactSync.Context\ContactSync.Context.csproj" />
+    <ProjectReference Include="..\ContactSync.Data\ContactSync.Data.csproj" />
+    <ProjectReference Include="..\ContactSync.Dto\ContactSync.Dto.csproj" />
+    <ProjectReference Include="..\ContactSync.Entities\ContactSync.Entities.csproj" />
+    <ProjectReference Include="..\ContactSync.IBusinessLogic\ContactSync.IBusinessLogic.csproj" />
+    <ProjectReference Include="..\ContactSync.IRepository\ContactSync.IRepository.csproj" />
+    <ProjectReference Include="..\ContactSync.Repository\ContactSync.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
