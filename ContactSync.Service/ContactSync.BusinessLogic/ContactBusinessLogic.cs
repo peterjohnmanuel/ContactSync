@@ -65,7 +65,10 @@ namespace ContactSync.BusinessLogic
                 .Where(x =>
 
                     x.FirstName.ToLower().Contains(search.ToLower())
+                    || x.LastName.ToLower().Contains(search.ToLower())
                     || x.HomeNumber.ToLower().Contains(search.ToLower())
+                    || x.MobileNumber.ToLower().Contains(search.ToLower())
+                    || x.Email.ToLower().Contains(search.ToLower())
                 );
             }
             else
