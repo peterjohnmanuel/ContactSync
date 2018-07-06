@@ -8,14 +8,17 @@ import { NavigationModule } from './navigation/navigation.module';
 import { AppComponent } from './app.component';
 
 import { ContactGroupService } from './shared/services/contact-group-service';
+import { ContactService } from './shared/services/contact-service';
 import { ContactGroupListComponent } from './contactGroups/contact-group-list/contact-group-list.component';
 import { ContactGroupEditorComponent } from './contactGroups/contact-group-editor/contact-group-editor.component';
+import { ContactListComponent  } from './contact/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactGroupListComponent,
-    ContactGroupEditorComponent
+    ContactGroupEditorComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { ContactGroupEditorComponent } from './contactGroups/contact-group-edito
     HttpClientModule,
     FormsModule
   ],
-  providers: [ContactGroupService],
+  providers: [ContactGroupService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

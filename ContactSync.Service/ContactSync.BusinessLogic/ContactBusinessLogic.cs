@@ -57,12 +57,19 @@ namespace ContactSync.BusinessLogic
             if (contactGroups == null)
                 throw new BusinessRuleException(ValidationMessages.ContactGroupNotFound);
 
-            var contacts = contactGroups.Contacts
-                .Where(x => 
-                
+            IEnumerable<Contact> contacts;
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                contacts = contactGroups.Contacts
+                .Where(x =>
+
                     x.FirstName.ToLower().Contains(search.ToLower())
                     || x.HomeNumber.ToLower().Contains(search.ToLower())
                 );
+            }
+            else
+                contacts = contactGroups.Contacts;
 
             return contacts;
         }
