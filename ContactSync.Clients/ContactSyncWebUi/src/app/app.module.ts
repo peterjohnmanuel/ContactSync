@@ -12,13 +12,15 @@ import { ContactService } from './shared/services/contact-service';
 import { ContactGroupListComponent } from './contactGroups/contact-group-list/contact-group-list.component';
 import { ContactGroupEditorComponent } from './contactGroups/contact-group-editor/contact-group-editor.component';
 import { ContactListComponent  } from './contact/contact-list/contact-list.component';
+import { ContactEditorComponent } from './contact/contact-editor/contact-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactGroupListComponent,
     ContactGroupEditorComponent,
-    ContactListComponent
+    ContactListComponent,
+    ContactEditorComponent
   ],
   imports: [
     BrowserModule,
